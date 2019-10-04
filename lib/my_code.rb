@@ -11,10 +11,11 @@ end
 
 def reduce(array, starting_value = nil)
   value = starting_value
+  counter = 0
   if value == nil
     value = array[0]
+    counter += 1
   end
-  counter = 0
   while counter < array.length do
     value = yield(value, array[counter])
     counter += 1
