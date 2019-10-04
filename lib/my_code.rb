@@ -9,8 +9,11 @@ def map(array)
   return new_array
 end
 
-def reduce(array, starting_value = 0)
+def reduce(array, starting_value = nil)
   value = starting_value
+  if value == nil
+    value = array[0]
+  end
   counter = 0
   while counter < array.length do
     value = yield(value, array[counter])
